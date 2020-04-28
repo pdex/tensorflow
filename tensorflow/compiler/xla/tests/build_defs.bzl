@@ -139,11 +139,11 @@ def xla_test(
         this_backend_args = backend_args.get(backend, [])
         this_backend_data = []
         if backend == "cpu":
-            backend_deps = ["//tensorflow/compiler/xla/service:cpu_plugin"]
-            backend_deps += ["//tensorflow/compiler/xla/tests:test_macros_cpu"]
+            backend_deps = ["@org_tensorflow//tensorflow/compiler/xla/service:cpu_plugin"]
+            backend_deps += ["@org_tensorflow//tensorflow/compiler/xla/tests:test_macros_cpu"]
         elif backend == "gpu":
-            backend_deps = ["//tensorflow/compiler/xla/service:gpu_plugin"]
-            backend_deps += ["//tensorflow/compiler/xla/tests:test_macros_gpu"]
+            backend_deps = ["@org_tensorflow//tensorflow/compiler/xla/service:gpu_plugin"]
+            backend_deps += ["@org_tensorflow//tensorflow/compiler/xla/tests:test_macros_gpu"]
             this_backend_tags += tf_cuda_tests_tags()
         elif backend in plugins:
             backend_deps = []
